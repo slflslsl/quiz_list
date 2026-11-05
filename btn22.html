@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+    width: 100px;
+    height: 50px;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    
+    /* ⭐ 0.3초 동안 부드럽게 변해라! */
+    transition: all 0.3s ease; 
+}
+
+.btn:hover {
+    width: 150px;             /* 가로가 늘어남 */
+    background-color: green;  /* 색깔도 바뀜 */
+    transform: scale(1.1);    /* 살짝 커짐 (추가 꿀팁!) */
+}
+    </style>
+</head>
+<body>
+    <button class="btn">ㅇㅇ</button>
+</body>
+</html>

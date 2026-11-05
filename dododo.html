@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컨테이너 구조 연습</title>
+    <style>
+        /* 1. 기본 세팅 (여백 초기화) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: '맑은 고딕', sans-serif;
+            background-color: #f4f4f4; /* 바탕화면은 연한 회색 */
+            padding: 20px;
+        }
+
+        /* 2. 전체 컨테이너 (가운데 정렬) */
+        .container {
+            max-width: 800px;
+            margin: 0 auto; /* ⭐ 중앙 정렬 */
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden; /* 모서리 둥글게 깎인 부분 밖으로 내용 안 넘치게 */
+        }
+
+        /* 3. 헤더 (로고와 메뉴를 양옆으로) */
+        .header {
+            display: flex; /* ⭐ 자식들을 옆으로 나란히 */
+            justify-content: space-between; /* 양 끝으로 밀기 */
+            align-items: center; /* 세로 중앙 정렬 */
+            padding: 20px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        /* 로고 (배경색으로 눈에 띄게!) */
+        .logo {
+            background-color: #4a90e2; /* 파란색 배경 */
+            color: white;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .menu {
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* 4. 메인 콘텐츠 영역 */
+        .main-content {
+            padding: 30px 20px;
+        }
+
+        /* 상품 리스트 (아이템들을 가로로 배치) */
+        .product-list {
+            display: flex;
+            gap: 20px; /* 아이템 사이 간격 */
+            flex-wrap: wrap; /* 화면 좁아지면 다음 줄로 넘어감 */
+        }
+
+        /* 개별 상품 아이템 (배경색으로 눈에 띄게!) */
+        .product-item {
+            background-color: #ffeaa7; /* 노란색 배경 */
+            width: 200px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #fdcb6e;
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #ccc; /* 이미지 없을 때 회색 배경 */
+        }
+
+        .product-item h3 {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* 5. 푸터 */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. 전체 페이지를 감싸는 큰 컨테이너 -->
+    <div class="container">
+        
+        <!-- 2. 헤더 (로고, 메뉴) -->
+        <header class="header">
+            <div class="logo">로고</div>
+            <nav class="menu">메뉴들</nav>
+        </header>
+
+        <!-- 3. 메인 콘텐츠 영역 -->
+        <main class="main-content">
+            <!-- 3-1. 상품 리스트를 감싸는 컨테이너 -->
+            <div class="product-list">
+                <!-- 3-2. 개별 아이템들 -->
+                <div class="product-item">
+                    <!-- 임시 이미지 주소 -->
+                    <img src="https://picsum.photos/200/120?random=1" alt="상품1">
+                    <h3>상품1</h3>
+                </div>
+                <div class="product-item">
+                    <img src="https://picsum.photos/200/120?random=2" alt="상품2">
+                    <h3>상품2</h3>
+                </div>
+                <div class="product-item">
+                    <img src="https://picsum.photos/200/120?random=3" alt="상품3">
+                    <h3>상품3</h3>
+                </div>
+            </div>
+        </main>
+
+        <!-- 4. 푸터 -->
+        <footer class="footer">저작권 정보 등</footer>
+        
+    </div>
+</body>
+</html>
